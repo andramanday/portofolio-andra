@@ -1,0 +1,96 @@
+nav{
+    position:relative;    
+    padding: 0;
+    margin: 0;
+    display: flex;
+    background: #f7f7f7;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 7vh;
+    padding-left: 30px;
+    padding-right: 30px;
+    
+    .title{
+        display: flex;
+        align-items: center;
+        width: 40%;
+        font-weight: bold;
+        font-size: 15px;
+        color: #2ecc71;
+    }
+
+    ul {
+        flex: 2;
+        display: flex;
+        padding: 0;
+        margin: 0;
+
+        a {
+            width: 50%;
+            --animation-time: 200ms;
+
+            position: relative;
+            overflow: hidden;
+
+            --underline-color: #2ecc71;
+            --underline-size: 3px;
+          
+            color: #797979;
+            text-decoration: none;
+            padding: 2vh 2%;
+            text-align: center;
+            z-index: 10;
+            margin: 0;
+
+            svg{
+                // display: none;
+                padding:0;
+                margin: 0;
+            }
+
+            p{
+                padding:0;
+                margin:0;
+            }
+        }
+
+        a.active{
+            font-weight: bold;
+            color: #2ecc71;
+            z-index: 2;
+        }
+
+        a:hover{
+            color: #2ecc71;
+        }
+
+        a::after {
+            content: '';
+            display: block;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: var(--underline-size, 2px);
+            position: absolute;
+            background-color: var(--underline-color, currentColor);
+            transition:
+              transform ease var(--animation-time, 200ms),
+              opacity ease 0ms 200ms;
+            transform: translateX(100%);
+            opacity: 0;
+        }
+          
+        a:hover ~ a::after {
+            transform: translateX(-100%);
+        }
+
+        a.active::after, a:hover::after {
+            transform: translateX(0%);
+            opacity: 1;
+        }
+    }
+
+    ul:hover a:hover::after, ul:hover a:hover::after {
+        transition-delay: 0ms, 0ms;
+    }
+}

@@ -1,0 +1,116 @@
+@import './components/styles/_app.sass';
+@import url('//fonts.googleapis.com/css?family=Nunito:400,600,700,800');
+
+
+body{
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Nunito", "Segoe UI", arial;
+    background: #f4f6f9;
+    color: #434547;
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        background-color: white;
+        width: 80vw;
+        height: 80vh;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+
+        .content{
+            height: 100%; 
+            max-height: 100%; 
+            overflow-y: scroll;
+            padding: 3vh;           
+            
+            .loader-img{
+                height: 100%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+    }
+
+    
+    @media screen and (max-width: $laptopL){
+        .container{
+            height: 100vh;
+            width: 100vw;
+            border-radius: 0;
+            nav{
+                height: 10vh;
+            }
+
+            .content {
+                height: 76vh;
+                .project-wrap{
+                    grid-template-columns: repeat(auto-fill,minmax(25vw, 1fr));
+                }
+            }
+
+            footer{
+                height: 6vh;
+            }            
+        }
+    }
+
+    @media screen and (max-width: $mobileL){
+        .container{
+            height: 100vh;
+            width: 100vw;
+            border-radius: 0;
+    
+            nav{
+                height: 7vh;
+                .title{
+                    display: none;
+                }
+    
+                ul a p{
+                    display: none;
+                }
+            }
+    
+            hr{
+                top: 6.5vh;
+            }
+    
+            .content{
+                height: 79%;
+
+                .home-wrap{
+                    flex-direction: column-reverse;
+                    .home-info {
+                        align-items: center;
+                        p{
+                            font-size: 2em; 
+                        }
+                    }
+                }
+
+                .project-wrap{
+                    grid-template-columns: repeat(auto-fill,minmax(50vw, 1fr));
+                }
+            }
+
+            
+    
+        }
+    }
+
+    
+
+
+}

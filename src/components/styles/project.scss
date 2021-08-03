@@ -1,0 +1,42 @@
+.project-wrap{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(18vw, 1fr));
+
+    .project-item{
+        margin: 10px;
+        background-color: #ffff;
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        box-shadow: 1px 3px 2px 0 rgba(0, 0, 0, 0.05);
+        
+        img{
+            width: 100%;
+            height: 200px;
+            border: rgba(0, 0, 0, 0.05) 1px solid;
+        }
+
+        .project-info{
+            flex: 1;
+
+            p{
+                text-align: center;
+                font-weight: bold;
+            }
+            pre{
+                padding: 0;
+                margin: 5px;
+                font-size: 1em;
+                tab-size: 2;
+                white-space: pre-wrap;
+            }
+        }
+    }
+
+    .project-item:hover {
+        cursor: pointer;
+    }
+
+    
+
+}
